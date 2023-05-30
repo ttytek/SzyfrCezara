@@ -7,7 +7,6 @@ public class Encrypter {
         this.shift_value = shift_value;
     }
 
-
     public String encrypt(String message){
         String encryptedMessage = new String();
         for(char letter : message.toCharArray()){
