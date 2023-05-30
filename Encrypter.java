@@ -1,5 +1,8 @@
 public class Encrypter {
     private int shift_value;
+    public void setShift_value(int shift_value) {
+        this.shift_value = shift_value;
+    }
     public Encrypter(int shift_value){
         this.shift_value = shift_value;
     }
@@ -32,40 +35,6 @@ public class Encrypter {
         shift_value -= 26;
         shift_value *= -1;
         return decryptedMessage;
-    }
-
-    private void fakeCoverage(){
-        int a = 1;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
-        a++;
     }
 
 }
