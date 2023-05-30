@@ -9,7 +9,6 @@ public class Encrypter {
     public Encrypter(int shift_value){
         this.shift_value = shift_value;
     }
-
     public String encrypt(String message){
         String encryptedMessage = new String();
         for(char letter : message.toCharArray()){
@@ -29,7 +28,20 @@ public class Encrypter {
         }
         return encryptedMessage;
     }
-
+    public String encrypt(String message, int shift_value){
+        int old_shift_value = this.shift_value;
+        this.shift_value = shift_value;
+        String encryptedMessage = encrypt(message);
+        this.shift_value = old_shift_value;
+        return encryptedMessage;
+    }
+    public String decrypt(String message, int shift_value){
+        int old_shift_value = this.shift_value;
+        this.shift_value = shift_value;
+        String decryptedMessage = decrypt(message);
+        this.shift_value = old_shift_value;
+        return decryptedMessage;
+    }
     public String decrypt(String message){
         shift_value *= -1;
         shift_value += 26;
@@ -38,5 +50,4 @@ public class Encrypter {
         shift_value *= -1;
         return decryptedMessage;
     }
-
 }
