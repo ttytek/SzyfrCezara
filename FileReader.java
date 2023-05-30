@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class FileReader {
+    //cool file reader
     String readLine(String fileName){
         File file = new File(fileName);
         Scanner scanner;
