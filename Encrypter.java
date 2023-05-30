@@ -3,6 +3,9 @@ public class Encrypter {
     public void setShift_value(int shift_value) {
         this.shift_value = shift_value;
     }
+    public Encrypter(){
+        shift_value = 3;
+    }
     public Encrypter(int shift_value){
         this.shift_value = shift_value;
     }
