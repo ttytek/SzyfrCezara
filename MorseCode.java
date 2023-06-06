@@ -2,7 +2,7 @@ public class MorseCode {
     private String[] numbers =
             {
                     "-----",    //0
-                    ".---",     //1
+                    ".----",     //1
                     "..---",    //2
                     "...--",    //3
                     "....-",    //4
@@ -46,20 +46,53 @@ public class MorseCode {
         for(char letter : message.toCharArray()){
             if((int)letter <=122 && (int) letter >= 97){    //mala litera
                 letter -= 97;
-                encodedMessage += " ";
                 encodedMessage += letters[letter];
+                encodedMessage += " ";
+                continue;
             }
             if((int)letter <= 90 && (int)letter >= 65){     //wielka litera
                 letter -= 65;
-                encodedMessage += " ";
                 encodedMessage += letters[letter];
+                encodedMessage += " ";
+                continue;
             }
             if((int)letter <= 57 && (int)letter >= 48){
                 letter -= 48;
-                encodedMessage += " ";
                 encodedMessage += numbers[letter];
+                encodedMessage += " ";
+                continue;
+            }
+            if(letter == ' ' || letter == '\n'){
+                encodedMessage += " / ";
             }
         }
         return encodedMessage;
+    }
+
+    public String decode(String message){
+        String decodedMessage = new String();
+        String currentCharacter = new String();
+        for(char letter : message.toCharArray()){
+            if(letter == ' '){
+                if(currentCharacter.equals("/")){
+                    decodedMessage += ' ';
+                }
+                for(int i = 0; i < letters.length; i++){
+                    if(currentCharacter.equals(letters[i])){
+                        decodedMessage += (char)(65+i);
+                    }
+                }
+                for(int i = 0; i < numbers.length; i++){
+                    if(currentCharacter.equals(numbers[i])){
+                        decodedMessage += (char)(48+i);
+                    }
+                }
+                currentCharacter = "";
+            }
+            else{
+                currentCharacter += letter;
+            }
+        }
+        return decodedMessage;
     }
 }
