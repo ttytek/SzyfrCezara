@@ -11,5 +11,6 @@ public class Main {
 
         System.out.println(morseCode.encode("a 1 b 2"));
         System.out.println(morseCode.decode(".-  / .----  / -...  / ..--- "));
+        System.out.println("Działa");
     }
 }
