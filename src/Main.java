@@ -1,4 +1,7 @@
+package src;
+
 import java.util.EmptyStackException;
+import src.Morse.MorseCode;
 
 public class Main {
     public static void main(String[] args){

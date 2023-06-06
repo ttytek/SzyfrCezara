@@ -1,3 +1,4 @@
+package src.Morse;
 public class MorseCode {
     private String[] numbers =
             {
