@@ -1,5 +1,3 @@
-package src.test.java;
-
 import src.Morse.MorseCode;
 import org.junit.Test;
 
